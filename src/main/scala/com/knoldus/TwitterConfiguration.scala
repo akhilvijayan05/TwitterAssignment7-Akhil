@@ -27,7 +27,7 @@ class TwitterConfiguration {
       .setOAuthConsumerSecret(consumerSecretKey)
       .setOAuthAccessToken(accessToken)
       .setOAuthAccessTokenSecret(accessTokenSecret)
-    return new TwitterFactory(cb.build()).getInstance
+    new TwitterFactory(cb.build()).getInstance
   }
 }
 

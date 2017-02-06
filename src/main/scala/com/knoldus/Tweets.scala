@@ -11,12 +11,13 @@ import scala.concurrent.ExecutionContext.Implicits.global
 class Tweets {
 
   val log = Logger.getLogger(this.getClass)
+  val count=100
 
   def getTweets(twitter: Twitter,query: Query):  Future[Int] = {
     /**
       * retrieving tweets
       */
-      query.setCount(100)
+      query.setCount(count)
     query.setSince("2016-02-5")
     val result = twitter.search(query)
     val iter = result.getTweets.iterator
@@ -28,11 +29,11 @@ class Tweets {
     if (iter.hasNext()) {
 
       val status = iter.next
-      iterate(sum+1)
+      iterate(sum + 1)
     }
-     else
-
+     else {
       sum
+     }
     }
 
         iterate(0)
@@ -43,7 +44,7 @@ class Tweets {
     /**
       * average retweets count
       */
-    query.setCount(100)
+    query.setCount(count)
     query.setSince("2017-02-5")
     val result = twitter.search(query)
     val iter = result.getTweets.iterator
@@ -58,7 +59,9 @@ class Tweets {
           iterate(sum + status.getRetweetCount)
         }
         else
+        {
           sum
+        }
       }
       iterate(0)/100
     }
@@ -68,7 +71,7 @@ class Tweets {
     /**
       * average likes count
       */
-    query.setCount(100)
+    query.setCount(count)
     query.setSince("2017-02-5")
     val result = twitter.search(query)
     val iter = result.getTweets.iterator
@@ -83,8 +86,9 @@ class Tweets {
           iterate(sum + status.getFavoriteCount)
         }
         else
-
+        {
           sum
+        }
       }
 
       iterate(0)/100
