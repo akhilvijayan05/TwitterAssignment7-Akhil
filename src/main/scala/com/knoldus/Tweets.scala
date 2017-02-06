@@ -63,7 +63,7 @@ class Tweets {
           sum
         }
       }
-      iterate(0)/100
+      iterate(0)/count
     }
   }
 
@@ -91,7 +91,7 @@ class Tweets {
         }
       }
 
-      iterate(0)/100
+      iterate(0)/count
     }
   }
 }
