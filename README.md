@@ -24,3 +24,7 @@ sbt clean coverage test
 sbt coverageReport
 
 ![sbt_coveragereport](https://cloud.githubusercontent.com/assets/25051863/22629359/7672813e-ec0a-11e6-9899-ab9535eba559.png)
+
+sbt scalastyle
+
+![sbt_scalastyle](https://cloud.githubusercontent.com/assets/25051863/22633587/d47d749e-ec48-11e6-9f54-d3fc67912186.png)
